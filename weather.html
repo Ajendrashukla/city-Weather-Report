@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Detection</title>
+</head>
+<div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+<body style="background-color: aqua;">
+    <center><h1 style="color:yellow;">Weather Detection</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter a city">
+        <input type="submit" value="Get Weather">
+    </form>
+
+    {% if weather_data %}
+        <h2 style="color: red;">{{ weather_data.city }}</h2>
+        <p>Temperature: {{ weather_data.temperature }} centigrade</p>
+    <p>feels like Temperature: {{ weather_data.feels_like }} centigrade</p>
+    <p>min Temperature: {{ weather_data.temp_min}} centigrade</p>
+    <p>max Temperature: {{ weather_data.temp_max}} centigrade</p>
+
+        <p>Humidity: {{ weather_data.humidity }}%</p>
+        <p>Description: {{ weather_data.description }}</p>
+
+    {% else %}
+        <p>No weather data available.</p>
+    {% endif %}
+</center></div>
+</body>
+</html>
