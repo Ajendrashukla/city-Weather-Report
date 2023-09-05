@@ -13,7 +13,7 @@ def index():
         city = request.form['city']
 
         # Make a request to the OpenWeatherMap API
-        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={''}"
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}
         response = requests.get(url).json()
 
         # Parse the response and extract the required data
